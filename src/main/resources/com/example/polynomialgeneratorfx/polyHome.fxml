@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.polynomialgeneratorfx.Controllers.PolyHomeController">
+   <AnchorPane prefHeight="400.0" prefWidth="500.0">
+      <children>
+         <ImageView fitHeight="400.0" fitWidth="506.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+               <Image url="@Images/leavesbg.jpg" />
+            </image>
+         </ImageView>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="34.0" layoutX="457.0" layoutY="14.0" opacity="0.94" stroke="BLACK" strokeType="INSIDE" width="35.0" AnchorPane.bottomAnchor="355.3333333333333" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <effect>
+               <GaussianBlur radius="18.0" />
+            </effect>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="34.0" layoutX="145.0" layoutY="18.0" opacity="0.74" stroke="BLACK" strokeType="INSIDE" width="200.0">
+            <effect>
+               <GaussianBlur radius="18.0" />
+            </effect>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="53.0" layoutX="150.0" layoutY="242.0" opacity="0.56" stroke="BLACK" strokeType="INSIDE" width="193.0">
+            <effect>
+               <GaussianBlur radius="39.5" />
+            </effect>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="166.0" layoutX="276.0" layoutY="69.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" width="200.0">
+            <effect>
+               <GaussianBlur radius="39.5" />
+            </effect>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="166.0" layoutX="24.0" layoutY="69.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" width="200.0">
+            <effect>
+               <GaussianBlur radius="39.5" />
+            </effect>
+         </Rectangle>
+         <Label alignment="CENTER" layoutX="126.0" layoutY="17.0" prefHeight="34.0" prefWidth="238.0" text="Polynomial Generator" textAlignment="CENTER">
+            <font>
+               <Font name="Apple Symbols" size="19.0" />
+            </font>
+         </Label>
+         <JFXButton fx:id="exitButton" alignment="CENTER" buttonType="RAISED" layoutX="457.0" layoutY="14.0" onAction="#onExitButtonClicked" prefHeight="27.0" prefWidth="27.0" text="X" textAlignment="CENTER" AnchorPane.bottomAnchor="355.3333333333333" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="14.333333333333336" AnchorPane.topAnchor="14.0">
+            <font>
+               <Font name="Palatino Linotype" size="17.0" />
+            </font>
+         </JFXButton>
+         <JFXButton fx:id="generateButton" alignment="CENTER" buttonType="RAISED" layoutX="156.0" layoutY="249.0" onAction="#onGenerateButtonClicked" text="Generate Polynomial" textAlignment="CENTER">
+            <font>
+               <Font name="Apple Symbols" size="17.0" />
+            </font>
+         </JFXButton>
+         <JFXRadioButton fx:id="uniRadioButton" layoutX="73.0" layoutY="129.0" prefHeight="20.0" prefWidth="104.0" text="Univariate" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="129.0">
+            <font>
+               <Font size="14.0" />
+            </font></JFXRadioButton>
+         <JFXRadioButton fx:id="bivarRadioButton" layoutX="72.0" layoutY="160.0" prefHeight="20.0" prefWidth="104.0" text="Bivariate" AnchorPane.bottomAnchor="223.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="160.0">
+            <font>
+               <Font size="14.0" />
+            </font></JFXRadioButton>
+         <JFXRadioButton fx:id="triRadioButton" layoutX="73.0" layoutY="191.0" prefHeight="20.0" prefWidth="104.0" text="Trivariate" AnchorPane.bottomAnchor="192.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="191.0">
+            <font>
+               <Font size="14.0" />
+            </font></JFXRadioButton>
+         <JFXComboBox fx:id="degreeComboBox" layoutX="348.0" layoutY="147.0" onAction="#onComboBoxClicked" prefHeight="25.0" prefWidth="66.0" promptText="degree" unFocusColor="#0011ff">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></JFXComboBox>
+         <Label layoutX="74.0" layoutY="101.0" text="Indetermintates">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+         <Label alignment="CENTER" layoutX="347.0" layoutY="101.0" prefHeight="17.0" prefWidth="57.0" text="Degree">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+         <JFXTextArea fx:id="displayPolyLabel" editable="false" layoutX="40.0" layoutY="286.0" prefHeight="43.0" prefWidth="416.0" unFocusColor="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font></JFXTextArea>
+         <Label layoutX="117.0" layoutY="346.0" text="Default Polynomial: Univariate with degree &lt;= 3" />
+      </children>
+   </AnchorPane>
+
+</VBox>
